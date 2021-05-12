@@ -14,8 +14,8 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
 
   <link rel="stylesheet" href="../../public/css/style.css">
-  
-  
+
+
 
 
   <title>Yıldız Güvenlik</title>
@@ -225,46 +225,34 @@
   </section>
 </body>
 
-<footer class="pt-4" style="margin-top: 80px;">
+
+
+<footer class="p-2" style="margin-top: 40px; background-color: #FAB518; ">
   <div class="container">
-    <div class="row justify-content-center">
-      <hr><br><br>
-      <div class="col-lg-6">
-        <form action="gonder.php" method="post" enctype="multipart/form-data">
-
-          <h6 class="mb-2">İletişim</h6>
-
-          <input type="text" class="form-control mb-2" required="" name="ad" id="floatingInput" placeholder="Ad Soyad">
-          <input type="text" class="form-control mb-2" name="tel" id="floatingInput" placeholder="Telefon Numarası">
-          <input type="email" class="form-control mb-2" required=""  name="mail" id="floatingInput" placeholder="Mail Adresi">
-          <textarea class="form-control mb-2" required=""  name="message" placeholder="Mesajınız" id="floatingTextarea"></textarea>
-          <input type="submit" name="btn1" class="btn btn-dark "></input>
-        </form>
-      </div>
-
-      <div class="col-md-3">
+    <div class="col-4 row justify-content-center" style="margin:auto;">
+      <div class="col-6 mt-5">
         <h6>Sayfalar</h6>
-        <ul class="list-unstyled text-small">
-          <li class="mb-1"><a class="link-secondary text-decoration-none" href="anasayfa.php">Anasayfa</a></li>
-          <li class="mb-1"><a class="link-secondary text-decoration-none" href="programlar.html">Programlar</a></li>
-          <li class="mb-1"><a class="link-secondary text-decoration-none" href="alarm_sistemleri.php">Alarm Sistemleri</a></li>
-          <li class="mb-1"><a class="link-secondary text-decoration-none" href="kamera_sistemleri.php">Kamera
+        <ul class="list-unstyled text-small mt-3">
+          <li class="mb-1"><a class="text-white text-decoration-none" href="anasayfa.php">Anasayfa</a></li>
+          <li class="mb-1"><a class="text-white text-decoration-none" href="programlar.html">Programlar</a></li>
+          <li class="mb-1"><a class="text-white text-decoration-none" href="alarm_sistemleri.php">Alarm Sistemleri</a></li>
+          <li class="mb-1"><a class="text-white text-decoration-none" href="kamera_sistemleri.php">Kamera
               Sistemleri</a></li>
-          <li class="mb-1"><a class="link-secondary text-decoration-none" href="iletisim.php">İletişim</a>
+          <li class="mb-1"><a class="text-white text-decoration-none" href="iletisim.php">İletişim</a>
           </li>
         </ul>
       </div>
-      <div class="col-md-3">
+      <div class="col-6 mt-5">
         <h6>İrtibat</h6>
-        <ul class="list-unstyled text-small">
-          <li class="mb-1"><a class="link-secondary text-decoration-none">Ertan YILDIZ</a></li>
-          <li class="mb-1"><a class="link-secondary text-decoration-none">0535 347 6757</a></li>
-          <li class="mb-1"><a class="link-secondary text-decoration-none">ertan.yildiz@hotmail.com</a>
+        <ul class="list-unstyled text-small mt-3">
+          <li class="mb-1"><a class="text-white text-decoration-none">Ertan YILDIZ</a></li>
+          <li class="mb-1"><a class="text-white text-decoration-none">Tel: 535 347 6757</a></li>
+          <li class="mb-1"><a class="text-white text-decoration-none">Mail: ertan.yildiz@hotmail.com</a>
           </li>
         </ul>
       </div>
-      <p class="text-center text-small color2 m-3">© 2021 Yıldız Güvenlik | Tüm Hakları Saklıdır.</p>
     </div>
+    <p class="text-center text-small text-white m-2">© 2021 Yıldız Güvenlik | Tüm Hakları Saklıdır.</p>
   </div>
 </footer>
 
