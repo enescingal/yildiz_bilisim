@@ -228,7 +228,7 @@
 
 
 <footer class="p-2" style="margin-top: 40px; background-color: #FAB518; ">
-  <div class="container">
+  <div class="container text-center">
     <div class="col-4 row justify-content-center" style="margin:auto;">
       <div class="col-6 mt-5">
         <h6>Sayfalar</h6>
@@ -252,7 +252,7 @@
         </ul>
       </div>
     </div>
-    <p class="text-center text-small text-white m-2">© 2021 Yıldız Güvenlik | Tüm Hakları Saklıdır.</p>
+    <p class="text-small text-white m-2">© 2021 Yıldız Güvenlik | Tüm Hakları Saklıdır.</p>
   </div>
 </footer>
 
