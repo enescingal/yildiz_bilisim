@@ -229,7 +229,7 @@
 
 <footer class="p-2" style="margin-top: 40px; background-color: #FAB518; ">
   <div class="container text-center">
-    <div class="col-4 row justify-content-center" style="margin:auto;">
+    <div class="col-8 row justify-content-center" style="margin:auto;">
       <div class="col-6 mt-5">
         <h6>Sayfalar</h6>
         <ul class="list-unstyled text-small mt-3">

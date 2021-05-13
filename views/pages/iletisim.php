@@ -90,40 +90,45 @@
 </header>
 
 <body>
-    <section>
-        <?php if (isset($_GET['success'])) : ?>
-            <div class="card text-dark bg-light mb-3 p-2" style="width: 30%;
+  <section>
+
+    <?php if (isset($_GET['success'])) : ?>
+      <div class="card text-dark bg-light mb-3 p-2" style="width: 30%;
         position: absolute; z-index: 1; margin-left:35%; margin-top: 30px;">
-                <div class="card-body text-center">
-                    <h6 class="card-title">Mesajınız iletilmiştir.</h6>
-                    <a href="anasayfa.php" class="btn btn-success mt-1 text-end">Tamam</a>
-                </div>
-            </div>
-        <?php endif ?>
+        <div class="card-body text-center">
+          <h6 class="card-title">Mesajınız iletilmiştir.</h6>
+          <a href="anasayfa.php" class="btn btn-success mt-1 text-end">Tamam</a>
+        </div>
+      </div>
+    <?php endif ?>
 
-        <div class="container" style="margin-top: 140px;">
-            <div class="col-12">
-                <h4>İletişim</h4>
-                <div class="card p-5 mt-5">
-                    <form action="gonder.php" method="post" enctype="multipart/form-data">
-                    <h6 class="mb-4">Sizinle iletişime geçelim...</h6>
+    <div class="container" style="margin-top: 140px;">
+      <div class="col-12">
+        <h4>İletişim</h4>
+        <div class="card p-5 mt-5">
+          <form action="gonder.php" method="post" enctype="multipart/form-data">
+            <h6 class="mb-4">Sizinle iletişime geçelim...</h6>
 
-                    <input type="text" class="form-control mb-2" name="ad" id="floatingInput" placeholder="Ad Soyad">
-                    <input type="text" class="form-control mb-2" name="tel" id="floatingInput" placeholder="Telefon Numarası">
-                    <input type="email" class="form-control mb-2" name="mail" id="floatingInput" placeholder="Mail Adresi">
-                    <textarea class="form-control mb-2" name="message" placeholder="Mesajınız" id="floatingTextarea"></textarea>
-                    <input type="submit" name="btn1" class="btn btn-dark "></input>
-                </form>
-                </div>
-                
-            </div>
+            <input type="text" class="form-control mb-2" name="ad" id="floatingInput" placeholder="Ad Soyad">
+            <input type="text" class="form-control mb-2" name="tel" id="floatingInput" placeholder="Telefon Numarası">
+            <input type="email" class="form-control mb-2" name="mail" id="floatingInput" placeholder="Mail Adresi">
+            <textarea class="form-control mb-2" name="message" placeholder="Mesajınız" id="floatingTextarea"></textarea>
+            <input type="submit" name="btn1" class="btn btn-dark "></input>
+          </form>
+        </div>
+        <div class="card mt-3">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3071.766666371772!2d27.888271515367624!3d39.65496550953778!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14b7018f8f52cb35%3A0x5449bd43be4469da!2sYILDIZ%20BILISIM%20VE%20GUVENLIK%20SISTEMLERI!5e0!3m2!1str!2str!4v1620943087940!5m2!1str!2str" width="100%" height="300px" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+
         </div>
 
+      </div>
+    </div>
 
 
 
 
-    </section>
+
+  </section>
 
 
 
@@ -133,7 +138,7 @@
 
 <footer class="p-2" style="margin-top: 40px; background-color: #FAB518; ">
   <div class="container text-center">
-    <div class="col-4 row justify-content-center " style="margin:auto;">
+    <div class="col-8 row justify-content-center " style="margin:auto;">
       <div class="col-6 mt-5">
         <h6>Sayfalar</h6>
         <ul class="list-unstyled text-small mt-3 ">

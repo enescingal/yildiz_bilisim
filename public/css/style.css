@@ -5,6 +5,11 @@ body{
 .color2,.color2:hover{
     color:rgba(0, 0, 0, .6) !important;
 }
+
+.color3{
+    color: #FAB518 !important;
+}
+
 .navtext{
     padding: 0px 10px;
 }

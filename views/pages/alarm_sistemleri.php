@@ -1,3 +1,7 @@
+<?php
+include 'baglan.php';
+?>
+
 <!doctype html>
 <html lang="tr">
 
@@ -90,146 +94,231 @@
 </header>
 
 <body>
-  <slider>
-    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" style="margin-top: 84px;">
+  <div class="container" style="margin-top: 140px;">
+    <div class="col-12 mt-3 mb-5">
+      <h4>Alarm Sistemleri</h4>
 
+      <div class="accordion mt-5" id="accordionExample">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingOne">
+            <button class="accordion-button fs-5" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+              Alarm Panelleri
+            </button>
+          </h2>
+          <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              <h5 class="m-3" style="color: #FAB518;">Kablolu Paneller</h5>
+              <div class="row row-cols-2 row-cols-md-4 g-4">
+                <?php
+                $cek = $vt->query("select * from kablolu_panel");
+                $cek->execute();
+                while ($row = $cek->fetch(PDO::FETCH_ASSOC)) {
+                ?>
+                  <div class="col">
+                    <div class="card h-100 ">
+                      <div class="card p-3" style="border: none; margin: 0px 20px;">
+                        <img src="<?= $row['resim'] ?>" class="card-img-top" alt="...">
 
-      <?php if (isset($_GET['success'])) : ?>
-        <div class="card text-dark bg-light mb-3 p-2" style="width: 30%;
-        position: absolute; z-index: 1; margin-left:35%; margin-top: 30px;">
-          <div class="card-body text-center">
-            <h6 class="card-title">Mesajınız iletilmiştir.</h6>
-            <a href="anasayfa.php" class="btn btn-success mt-1 text-end">Tamam</a>
-          </div>
-        </div>
-      <?php endif ?>
-
-
-
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <img src="../../public/img/s4.jpg" class="d-block w-100" alt="...">
-        </div>
-        <div class="carousel-item">
-          <img src="../../public/img/s5.jpg" class="d-block w-100" alt="...">
-        </div>
-        <div class="carousel-item">
-          <img src="../../public/img/s6.jpg" class="d-block w-100" alt="...">
-        </div>
-      </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
-    </div>
-  </slider>
-
-  <section>
-    <div class="container-lg">
-      <div class="col-12" style="margin: auto;">
-        <div class="row row-cols-1 row-cols-md-4 g-4">
-          <div class="col">
-            <div class="card h-100 text-center cb text-white">
-              <i class="fas fa-laptop-house fa-4x mt-3 ">
-              </i>
-              <div class="card-body">
-                <h5 class="card-title ">Akıllı Ev Sistemleri</h5>
+                      </div>
+                      <div class="card-body">
+                        <h5 class="card-title"> <?= $row['ad'] ?> </h5>
+                        <h6 class="card-subtitle mb-2 text-muted"> <?= $row['sub'] ?> </h6>
+                        <p class="card-text"><?= $row['detay'] ?></p>
+                      </div>
+                    </div>
+                  </div>
+                <?php }
+                ?>
               </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card h-100 text-center cb text-white">
-              <i class="fas fa-network-wired fa-4x mt-3"></i>
-              </i>
-              <div class="card-body">
-                <h5 class="card-title ">Network Ağı Kurulumu</h5>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card h-100 text-center cb text-white">
-              <i class="fas fa-laptop fa-4x mt-3"></i>
-              </i>
-              <div class="card-body">
-                <h5 class="card-title ">Bilgisayar Satış / Tamir</h5>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card h-100 text-center cb text-white">
-              <i class="fas fa-car fa-4x mt-3"></i>
-              </i>
-              <div class="card-body">
-                <h5 class="card-title ">Araç Kamera Sistemleri</h5>
+              <h5 class="m-3" style="color: #FAB518;">Kablosuz Paneller</h5>
+              <div class="row row-cols-2 row-cols-md-4 g-4">
+                <?php
+                $cek = $vt->query("select * from kablosuz_panel");
+                $cek->execute();
+                while ($row = $cek->fetch(PDO::FETCH_ASSOC)) {
+                ?>
+                  <div class="col">
+                    <div class="card h-100 ">
+                      <div class="card p-3" style="border: none; margin: 0px 20px;">
+                        <img src="<?= $row['resim'] ?>" class="card-img-top" alt="...">
+
+                      </div>
+
+                      <div class="card-body">
+                        <h5 class="card-title"> <?= $row['ad'] ?> </h5>
+                        <h6 class="card-subtitle mb-2 text-muted"> <?= $row['sub'] ?> </h6>
+                        <p class="card-text"><?= $row['detay'] ?></p>
+                      </div>
+                    </div>
+                  </div>
+                <?php }
+                ?>
               </div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="col-md-6 mt-5">
-          <div class="card border-0">
-            <img src="../../public/img/a3.jpg" alt="">
-          </div>
-        </div>
-        <div class="col-md-6 mt-5">
-          <h5>Corcam Kamera Sistemleri</h5>
-          <br>
-          <p>
-            CORCAM markası kaliteli, uygun fiyatlı ve uzun ömürlü kamera sistemlerini siz değerli müşterilerimiz ile
-            buluşturuyoruz.
-          </p>
-        </div>
-        <div class="col-md-6 mt-5">
-          <h5>Akıllı Ev Otomasyonu Nedir?</h5>
-          <br>
-          <p>
-            Akıllı ev otomasyonu, aydınlatmadan güvenliğe, ısıdan enerjiye akıllı bir evin tüm parçalarını ifade eder.
-            Bu sistem, sıraladığımız tüm bu işlerin otomatik bir sistem eliyle yapılmasını sağlar. <br>
-            Akıllı ev otomasyonu siz evde olmasanız bile tüm ışıkları otomatik olarak kapatmanızı sağlar hatta siz
-            evinize gelmek üzereyken sizin önceden belirlediğiniz ışıkları otomatik olarak açar.
-          </p>
-        </div>
-        <div class="col-md-6 mt-5 ">
-          <div class="card border-0">
-            <img src="../../public/img/a2.jpg" alt="">
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="container-fluid p-0 mt-5">
-      <img src="../../public/img/ucretsiz.jpg" alt="" style="width: 100%;">
-    </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingTwo">
+            <button class="accordion-button collapsed fs-5" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+              Uç Birimler
+            </button>
+          </h2>
+          <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              <h5 class="m-3" style="color: #FAB518;">Kablolu Uç Birimler</h5>
+              <div class="row row-cols-2 row-cols-md-4 g-4">
+                <?php
+                $cek = $vt->query("select * from kablolu_uc");
+                $cek->execute();
+                while ($row = $cek->fetch(PDO::FETCH_ASSOC)) {
+                ?>
+                  <div class="col">
+                    <div class="card h-100 ">
+                      <div class="card p-3" style="border: none; margin: 0px 20px;">
+                        <img src="<?= $row['resim'] ?>" class="card-img-top" alt="...">
 
-    <div class="container-lg">
-      <div class="row">
-        <div class="col-md-6 mt-5">
-          <div class="card border-0">
-            <img src="../../public/img/a4.jpg" alt="">
+                      </div>
+                      <div class="card-body">
+                        <h5 class="card-title"> <?= $row['ad'] ?> </h5>
+                        <h6 class="card-subtitle mb-2 text-muted"> <?= $row['sub'] ?> </h6>
+                        <p class="card-text"><?= $row['detay'] ?></p>
+                      </div>
+                    </div>
+                  </div>
+                <?php }
+                ?>
+              </div>
+              <h5 class="m-3" style="color: #FAB518;">Kablosuz Uç Birimler</h5>
+              <div class="row row-cols-2 row-cols-md-4 g-4">
+                <?php
+                $cek = $vt->query("select * from kablosuz_uc");
+                $cek->execute();
+                while ($row = $cek->fetch(PDO::FETCH_ASSOC)) {
+                ?>
+                  <div class="col">
+                    <div class="card h-100 ">
+                      <div class="card p-3" style="border: none; margin: 0px 20px;">
+                        <img src="<?= $row['resim'] ?>" class="card-img-top" alt="...">
+
+                      </div>
+
+                      <div class="card-body">
+                        <h5 class="card-title"> <?= $row['ad'] ?> </h5>
+                        <h6 class="card-subtitle mb-2 text-muted"> <?= $row['sub'] ?> </h6>
+                        <p class="card-text"><?= $row['detay'] ?></p>
+                      </div>
+                    </div>
+                  </div>
+                <?php }
+                ?>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="col-md-6 mt-5">
-          <h5>Alarm Sistemleri</h5>
-          <br>
-          <p>
-            Davetsiz misafirlere karşı, alarm sistemlerimiz ile güvenliğinizi en üst noktaya taşıyalım.
-          </p>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingThree">
+            <button class="accordion-button collapsed fs-5" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+              Alarm Setleri
+            </button>
+          </h2>
+          <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              <h5 class="m-3" style="color: #FAB518;">Kablolu Setler</h5>
+              <div class="row row-cols-2 row-cols-md-4 g-4">
+                <?php
+                $cek = $vt->query("select * from kablolu_set");
+                $cek->execute();
+                while ($row = $cek->fetch(PDO::FETCH_ASSOC)) {
+                ?>
+                  <div class="col">
+                    <div class="card h-100 ">
+                      <div class="card p-3" style="border: none; margin: 0px 20px;">
+                        <img src="<?= $row['resim'] ?>" class="card-img-top" alt="...">
+
+                      </div>
+                      <div class="card-body">
+                        <h5 class="card-title"> <?= $row['ad'] ?> </h5>
+                        <h6 class="card-subtitle mb-2 text-muted"> <?= $row['sub'] ?> </h6>
+                        <p class="card-text"><?= $row['detay'] ?></p>
+                      </div>
+                    </div>
+                  </div>
+                <?php }
+                ?>
+              </div>
+              <h5 class="m-3" style="color: #FAB518;">Kablosuz Setler</h5>
+              <div class="row row-cols-2 row-cols-md-4 g-4">
+                <?php
+                $cek = $vt->query("select * from kablosuz_set");
+                $cek->execute();
+                while ($row = $cek->fetch(PDO::FETCH_ASSOC)) {
+                ?>
+                  <div class="col">
+                    <div class="card h-100 ">
+                      <div class="card p-3" style="border: none; margin: 0px 20px;">
+                        <img src="<?= $row['resim'] ?>" class="card-img-top" alt="...">
+
+                      </div>
+
+                      <div class="card-body">
+                        <h5 class="card-title"> <?= $row['ad'] ?> </h5>
+                        <h6 class="card-subtitle mb-2 text-muted"> <?= $row['sub'] ?> </h6>
+                        <p class="card-text"><?= $row['detay'] ?></p>
+                      </div>
+                    </div>
+                  </div>
+                <?php }
+                ?>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingFour">
+            <button class="accordion-button collapsed fs-5" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+              Modüller
+            </button>
+          </h2>
+          <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+            <h5 class="m-3" style="color: #FAB518;">GSM & GPRS</h5>
+              <div class="row row-cols-2 row-cols-md-4 g-4">
+                <?php
+                $cek = $vt->query("select * from modul");
+                $cek->execute();
+                while ($row = $cek->fetch(PDO::FETCH_ASSOC)) {
+                ?>
+                  <div class="col">
+                    <div class="card h-100 ">
+                      <div class="card p-3" style="border: none; margin: 0px 20px;">
+                        <img src="<?= $row['resim'] ?>" class="card-img-top" alt="...">
+
+                      </div>
+                      <div class="card-body">
+                        <h5 class="card-title"> <?= $row['ad'] ?> </h5>
+                        <h6 class="card-subtitle mb-2 text-muted"> <?= $row['sub'] ?> </h6>
+                        <p class="card-text"><?= $row['detay'] ?></p>
+                      </div>
+                    </div>
+                  </div>
+                <?php }
+                ?>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-
-  </section>
+  </div>
 </body>
+
 
 
 
 <footer class="p-2" style="margin-top: 40px; background-color: #FAB518; ">
   <div class="container text-center">
-    <div class="col-4 row justify-content-center" style="margin:auto;">
+    <div class="col-8 row justify-content-center" style="margin:auto;">
       <div class="col-6 mt-5">
         <h6>Sayfalar</h6>
         <ul class="list-unstyled text-small mt-3">
@@ -252,9 +341,11 @@
         </ul>
       </div>
     </div>
-    <p class="text-small text-white m-2">© 2021 Yıldız Güvenlik | Tüm Hakları Saklıdır.</p>
+    <p class=" text-small text-white m-2">© 2021 Yıldız Güvenlik | Tüm Hakları Saklıdır.</p>
   </div>
 </footer>
+
+
 
 
 

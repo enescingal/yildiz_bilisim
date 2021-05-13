@@ -94,20 +94,20 @@ include 'baglan.php';
 </header>
 
 <body>
-    <div class="container" style="margin-top: 120px;">
+    <div class="container" style="margin-top: 140px;">
         <div class="col-12 mt-3 mb-5">
 
 
             <h4>Kamera Sistemleri</h4>
 
-            <div class="accordion" id="accordionPanelsStayOpenExample">
+            <div class="accordion mt-5" id="accordionExample">
                 <div class="accordion-item">
-                    <h2 class="accordion-header" id="panelsStayOpen-headingOne">
-                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+                    <h2 class="accordion-header" id="headingOne">
+                        <button class="accordion-button fs-5" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                             IP Kameralar
                         </button>
                     </h2>
-                    <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
+                    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                         <div class="accordion-body">
                             <div class="row row-cols-2 row-cols-md-4 g-4">
                                 <?php
@@ -135,32 +135,141 @@ include 'baglan.php';
                     </div>
                 </div>
                 <div class="accordion-item">
-                    <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
-                            Accordion Item #2
+                    <h2 class="accordion-header" id="headingTwo">
+                        <button class="accordion-button collapsed fs-5" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            AHD Kameralar
                         </button>
                     </h2>
-                    <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo">
+                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
                         <div class="accordion-body">
-                            <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                            <div class="row row-cols-2 row-cols-md-4 g-4">
+                                <?php
+                                $cek = $vt->query("select * from ahd_kamera");
+                                $cek->execute();
+                                while ($row = $cek->fetch(PDO::FETCH_ASSOC)) {
+                                ?>
+                                    <div class="col">
+                                        <div class="card h-100 ">
+                                            <div class="card p-3" style="border: none; margin: 0px 20px;">
+                                                <img src="<?= $row['resim'] ?>" class="card-img-top" alt="...">
+
+                                            </div>
+
+                                            <div class="card-body">
+                                                <h5 class="card-title"> <?= $row['ad'] ?> </h5>
+                                                <p class="card-text"><?= $row['detay'] ?></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                <?php }
+                                ?>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div class="accordion-item">
-                    <h2 class="accordion-header" id="panelsStayOpen-headingThree">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
-                            Accordion Item #3
+                    <h2 class="accordion-header" id="headingThree">
+                        <button class="accordion-button collapsed fs-5" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            DVR Kayıt Cihazları
                         </button>
                     </h2>
-                    <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingThree">
+                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
                         <div class="accordion-body">
-                            <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                            <div class="row row-cols-2 row-cols-md-4 g-4">
+                                <?php
+                                $cek = $vt->query("select * from dvr_kayit");
+                                $cek->execute();
+                                while ($row = $cek->fetch(PDO::FETCH_ASSOC)) {
+                                ?>
+                                    <div class="col">
+                                        <div class="card h-100 ">
+                                            <div class="card p-3" style="border: none; margin: 0px 20px;">
+                                                <img src="<?= $row['resim'] ?>" class="card-img-top" alt="...">
+
+                                            </div>
+
+                                            <div class="card-body">
+                                                <h5 class="card-title"> <?= $row['ad'] ?> </h5>
+                                                <p class="card-text"><?= $row['detay'] ?></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                <?php }
+                                ?>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingFour">
+                        <button class="accordion-button collapsed fs-5" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                            NVR Kayıt Cihazları
+                        </button>
+                    </h2>
+                    <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <div class="row row-cols-2 row-cols-md-4 g-4">
+                                <?php
+                                $cek = $vt->query("select * from nvr_kayit");
+                                $cek->execute();
+                                while ($row = $cek->fetch(PDO::FETCH_ASSOC)) {
+                                ?>
+                                    <div class="col">
+                                        <div class="card h-100 ">
+                                            <div class="card p-3" style="border: none; margin: 0px 20px;">
+                                                <img src="<?= $row['resim'] ?>" class="card-img-top" alt="...">
+
+                                            </div>
+
+                                            <div class="card-body">
+                                                <h5 class="card-title"> <?= $row['ad'] ?> </h5>
+                                                <p class="card-text"><?= $row['detay'] ?></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                <?php }
+                                ?>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingFive">
+                    <button class="accordion-button collapsed fs-5" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                        Switchler
+                    </button>
+                </h2>
+                <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <div class="row row-cols-2 row-cols-md-4 g-4">
+                            <?php
+                            $cek = $vt->query("select * from switch");
+                            $cek->execute();
+                            while ($row = $cek->fetch(PDO::FETCH_ASSOC)) {
+                            ?>
+                                <div class="col">
+                                    <div class="card h-100 ">
+                                        <div class="card p-3" style="border: none; margin: 0px 20px;">
+                                            <img src="<?= $row['resim'] ?>" class="card-img-top" alt="...">
 
+                                        </div>
+
+                                        <div class="card-body">
+                                            <h5 class="card-title"> <?= $row['ad'] ?> </h5>
+                                            <p class="card-text"><?= $row['detay'] ?></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            <?php }
+                            ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
+
+    </div>
 
     </div>
 
@@ -170,32 +279,32 @@ include 'baglan.php';
 
 
 <footer class="p-2" style="margin-top: 40px; background-color: #FAB518; ">
-  <div class="container text-center">
-    <div class="col-4 row justify-content-center" style="margin:auto;">
-      <div class="col-6 mt-5">
-        <h6>Sayfalar</h6>
-        <ul class="list-unstyled text-small mt-3">
-          <li class="mb-1"><a class="text-white text-decoration-none" href="anasayfa.php">Anasayfa</a></li>
-          <li class="mb-1"><a class="text-white text-decoration-none" href="programlar.html">Programlar</a></li>
-          <li class="mb-1"><a class="text-white text-decoration-none" href="alarm_sistemleri.php">Alarm Sistemleri</a></li>
-          <li class="mb-1"><a class="text-white text-decoration-none" href="kamera_sistemleri.php">Kamera
-              Sistemleri</a></li>
-          <li class="mb-1"><a class="text-white text-decoration-none" href="iletisim.php">İletişim</a>
-          </li>
-        </ul>
-      </div>
-      <div class="col-6 mt-5">
-        <h6>İrtibat</h6>
-        <ul class="list-unstyled text-small mt-3">
-          <li class="mb-1"><a class="text-white text-decoration-none">Ertan YILDIZ</a></li>
-          <li class="mb-1"><a class="text-white text-decoration-none">Tel: 535 347 6757</a></li>
-          <li class="mb-1"><a class="text-white text-decoration-none">Mail: ertan.yildiz@hotmail.com</a>
-          </li>
-        </ul>
-      </div>
+    <div class="container text-center">
+        <div class="col-8 row justify-content-center" style="margin:auto;">
+            <div class="col-6 mt-5">
+                <h6>Sayfalar</h6>
+                <ul class="list-unstyled text-small mt-3">
+                    <li class="mb-1"><a class="text-white text-decoration-none" href="anasayfa.php">Anasayfa</a></li>
+                    <li class="mb-1"><a class="text-white text-decoration-none" href="programlar.html">Programlar</a></li>
+                    <li class="mb-1"><a class="text-white text-decoration-none" href="alarm_sistemleri.php">Alarm Sistemleri</a></li>
+                    <li class="mb-1"><a class="text-white text-decoration-none" href="kamera_sistemleri.php">Kamera
+                            Sistemleri</a></li>
+                    <li class="mb-1"><a class="text-white text-decoration-none" href="iletisim.php">İletişim</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-6 mt-5">
+                <h6>İrtibat</h6>
+                <ul class="list-unstyled text-small mt-3">
+                    <li class="mb-1"><a class="text-white text-decoration-none">Ertan YILDIZ</a></li>
+                    <li class="mb-1"><a class="text-white text-decoration-none">Tel: 535 347 6757</a></li>
+                    <li class="mb-1"><a class="text-white text-decoration-none">Mail: ertan.yildiz@hotmail.com</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <p class=" text-small text-white m-2">© 2021 Yıldız Güvenlik | Tüm Hakları Saklıdır.</p>
     </div>
-    <p class=" text-small text-white m-2">© 2021 Yıldız Güvenlik | Tüm Hakları Saklıdır.</p>
-  </div>
 </footer>
 
 
