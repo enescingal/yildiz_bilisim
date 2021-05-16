@@ -50,7 +50,7 @@ function mailgonder($post)
 if (!empty($_POST)) {
     $gonder = mailgonder($_POST);
     if ($gonder === true) {
-        header("Location: anasayfa.php?success=1");
+        header("Location: iletisim.php?success=1");
         }
     } else {
 
@@ -58,7 +58,7 @@ if (!empty($_POST)) {
         session_start();
         session_destroy();
 
-        header("location:anasayfa.php");
+        header("location:iletisim.php");
         exit();
     }
 

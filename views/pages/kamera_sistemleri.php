@@ -20,9 +20,9 @@ include 'baglan.php';
     <link rel="stylesheet" href="../../public/css/style.css">
 
 
+    <link rel="shortcut icon" type="image/x-icon" href="../../public/img/logo.ico" />
 
-
-    <title>Yıldız Güvenlik</title>
+<title>Yıldız Güvenlik - 0535 347 6757</title>
 
 </head>
 
@@ -57,7 +57,7 @@ include 'baglan.php';
             <div class="row">
                 <div class="navbar navbar-expand-lg navbar-light">
 
-                    <a class="navbar-brand" href="anasayfa.php">
+                    <a class="navbar-brand" href="../../index.html">
                         <img src="../../public/img/logo1.png" style="width: 200px;"></a>
 
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -68,7 +68,7 @@ include 'baglan.php';
                     <div class="collapse navbar-collapse" id="navbarCollapse">
                         <ul class="navbar-nav text-center fw-bolder" style="margin-left: auto">
                             <li class="nav-item navtext ">
-                                <a class="nav-link " href="anasayfa.php">Anasayfa</a>
+                                <a class="nav-link " href="../../index.html">Anasayfa</a>
                             </li>
                             <li class="nav-item navtext">
                                 <a class="nav-link  " href="programlar.html">Programlar</a>
@@ -284,7 +284,7 @@ include 'baglan.php';
             <div class="col-6 mt-5">
                 <h6>Sayfalar</h6>
                 <ul class="list-unstyled text-small mt-3">
-                    <li class="mb-1"><a class="text-white text-decoration-none" href="anasayfa.php">Anasayfa</a></li>
+                    <li class="mb-1"><a class="text-white text-decoration-none" href="../../index.html">Anasayfa</a></li>
                     <li class="mb-1"><a class="text-white text-decoration-none" href="programlar.html">Programlar</a></li>
                     <li class="mb-1"><a class="text-white text-decoration-none" href="alarm_sistemleri.php">Alarm Sistemleri</a></li>
                     <li class="mb-1"><a class="text-white text-decoration-none" href="kamera_sistemleri.php">Kamera
